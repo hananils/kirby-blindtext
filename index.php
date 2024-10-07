@@ -4,55 +4,76 @@ use Kirby\Cms\App as Kirby;
 use Kirby\Filesystem\F;
 
 /**
- * Blindtext
+ * Returns a filler text.
+ *
+ * @param $name The name of the filler text.
  */
-
-function blindtext($name = 'lorem')
+function blindtext(string $name = 'lorem')
 {
-	// Get file
-	$file = null;
-	$paths = [kirby()->root('site'), __DIR__];
-	foreach ($paths as $path) {
-		$filename = $path . '/fillers/' . $name . '.md';
-		if (F::exists($filename)) {
-			$file = F::read($filename);
-		}
-	}
+    // Get file
+    $file = null;
+    $paths = [kirby()->root('site'), __DIR__];
+    foreach ($paths as $path) {
+        $filename = $path . '/fillers/' . $name . '.md';
+        if (F::exists($filename)) {
+            $file = F::read($filename);
+        }
+    }
 
-	// File missing
-	if (!$file) {
-		throw new Exception(
-			'A dummy text file named "' . $name . '" does not exist.'
-		);
-	}
+    // File missing
+    if (!$file) {
+        throw new Exception(
+            'A filler file named "' . $name . '" does not exist.'
+        );
+    }
 
-	// Typographer available
-	if (function_exists('typographer')) {
-		return typographer(markdown($file));
-	}
+    // Typographer available
+    if (function_exists('typographer')) {
+        return typographer(markdown($file));
+    }
 
-	return markdown($file);
+    return markdown($file);
 }
 
 Kirby::plugin('hananils/blindtext', [
-	'siteMethods' => [
-		'blindtext' => function ($name = 'lorem') {
-			return blindtext($name);
-		}
-	],
-	'pageMethods' => [
-		'blindtext' => function ($name = 'lorem') {
-			return blindtext($name);
-		}
-	],
-	'userMethods' => [
-		'blindtext' => function ($name = 'lorem') {
-			return blindtext($name);
-		}
-	],
-	'collectionMethods' => [
-		'blindtext' => function ($name = 'lorem') {
-			return blindtext($name);
-		}
-	]
+    'siteMethods' => [
+        /**
+         * Returns a filler text.
+         *
+         * @param $name The name of the filler text.
+         */
+        'blindtext' => function (string $name = 'lorem') {
+            return blindtext($name);
+        }
+    ],
+    'pageMethods' => [
+        /**
+         * Returns a filler text.
+         *
+         * @param $name The name of the filler text.
+         */
+        'blindtext' => function (string $name = 'lorem') {
+            return blindtext($name);
+        }
+    ],
+    'userMethods' => [
+        /**
+         * Returns a filler text.
+         *
+         * @param $name The name of the filler text.
+         */
+        'blindtext' => function (string $name = 'lorem') {
+            return blindtext($name);
+        }
+    ],
+    'collectionMethods' => [
+        /**
+         * Returns a filler text.
+         *
+         * @param $name The name of the filler text.
+         */
+        'blindtext' => function (string $name = 'lorem') {
+            return blindtext($name);
+        }
+    ]
 ]);
