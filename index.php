@@ -1,6 +1,7 @@
 <?php
 
 use Kirby\Cms\App as Kirby;
+use Kirby\Content\Field;
 use Kirby\Filesystem\F;
 
 /**
@@ -10,29 +11,34 @@ use Kirby\Filesystem\F;
  */
 function blindtext(string $name = 'lorem')
 {
-    // Get file
-    $file = null;
+    if ($name === '') {
+        throw new Exception('No filler defined.');
+    }
+
+    // Get filler text
+    $text = null;
     $paths = [kirby()->root('site'), __DIR__];
     foreach ($paths as $path) {
         $filename = $path . '/fillers/' . $name . '.md';
+
         if (F::exists($filename)) {
-            $file = F::read($filename);
+            $text = F::read($filename);
+
+            break;
         }
     }
 
-    // File missing
-    if (!$file) {
+    // Text missing
+    if (!$text) {
         throw new Exception(
             'A filler file named "' . $name . '" does not exist.'
         );
     }
 
-    // Typographer available
-    if (function_exists('typographer')) {
-        return typographer(markdown($file));
-    }
+    // Create field instance
+    $field = new Field(site(), 'blindtext', $text);
 
-    return markdown($file);
+    return $field->markdown();
 }
 
 Kirby::plugin('hananils/blindtext', [
