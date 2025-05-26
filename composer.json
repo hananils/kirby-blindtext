@@ -1,15 +1,15 @@
 {
     "name": "hananils/kirby-blindtext",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "type": "kirby-plugin",
-    "homepage": "https://kirby.hananils.de/plugins/blindtext",
     "license": "MIT",
+    "type": "kirby-plugin",
     "authors": [
         {
             "name": "hana+nils · Büro für Gestaltung",
             "email": "buero@hananils.de"
         }
     ],
+    "homepage": "https://kirby.hananils.de/plugins/blindtext",
     "require": {
         "php": "^8.2"
     },
