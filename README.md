@@ -1,6 +1,10 @@
 # Kirby Blindtext
 
-Blindtext offers filler texts that can be inserted into website for layout purposes:
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+# Introduction
+
+_Blindtext_ is the German word for filler text and thus this plugin offers fillers that can be inserted into templates for layout purposes:
 
 ```php
 // As helper
@@ -18,9 +22,25 @@ Blindtext offers filler texts that can be inserted into website for layout purpo
 
 This will return a paragraph of lorem ipsum:
 
-```markdown
-Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```html
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor
+    incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi
+    consequat. Quis aute iure reprehenderit in voluptate velit esse cillum
+    dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
 ```
+
+> [!TIP]  
+> **Blindtext works well with Typographer and Designer!** Blindtext returns a field object, which allows you to apply field methods to your text output:
+>
+> ```php
+>  <?= blindtext('body')->typographer()->designer()->level(2) ?>
+> ```
+>
+> Check out how to adjust output directly in your templates in the [Typographer](/plugins/typographer) and [Designer docs](/plugins/designer).
 
 ## Default fillers
 
@@ -39,14 +59,6 @@ Fillers can be called by passing their name to the `blindtext` method:
 
 ## Custom fillers
 
-Fillers are stored in Markdown files with file ending `md`. You can create custom filler in `/site/fillers/`. If a custom filler has the same name as a default filler, the custom one will take presedence.
+Fillers are stored in Markdown files with `.md` as extension. You can create custom filler in `/site/fillers`.
 
-## Typography
-
-If Typographer is installed, the `blindtext` method will return a Typographer object, which will allow us to apply additional manipulations. For instance, it's possible to change the headline hierachy:
-
-```php
-<?= blindtext('body')->level(2) ?>
-```
-
-Additional manipulations can be found in the [Typographer docs](https://github.com/hananils/kirby-typographer).
+Custom fillers, too, can be called by passing their name to the `blindtext` method. The filename without extension is used as the name. If a custom filler has the same name as a default filler, the custom one will take precedence.
