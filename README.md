@@ -62,3 +62,26 @@ Fillers can be called by passing their name to the `blindtext` method:
 Fillers are stored in Markdown files with `.md` as extension. You can create custom filler in `/site/fillers`.
 
 Custom fillers, too, can be called by passing their name to the `blindtext` method. The filename without extension is used as the name. If a custom filler has the same name as a default filler, the custom one will take precedence.
+
+## Installation
+
+### Download
+
+Download and copy this repository to `/site/plugins/blindtext`.
+
+### Git submodule
+
+```
+git submodule add https://github.com/hananils/kirby-blindtext.git site/plugins/blindtext
+```
+
+### Composer
+
+```
+composer require hananils/kirby-blindtext
+```
+
+# License
+
+This plugin is provided freely under the [MIT license](LICENSE.md) by [hana+nils · Büro für Gestaltung](https://hananils.de).  
+We create visual designs for digital and analog media.
