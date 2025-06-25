@@ -2,6 +2,9 @@
 
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
+> [!NOTE]
+> Please check out the online documentation at [kirby.hananils.de/plugins/blindtext](https://kirby.hananils.de/plugins/blindtext) for further information.
+
 # Introduction
 
 _Blindtext_ is the German word for filler text and thus this plugin offers fillers that can be inserted into templates for layout purposes:
