@@ -33,7 +33,7 @@ This will return a paragraph of lorem ipsum:
 >  <?= blindtext('body')->typographer()->designer()->level(2) ?>
 > ```
 > 
-> Check out how to adjust output directly in your templates in the [Typographer](https://kirby.hananils.test/plugins/typographer) and [Designer docs](https://kirby.hananils.test/plugins/designer).
+> Check out how to adjust output directly in your templates in the [Typographer](https://kirby.hananils.de/plugins/typographer) and [Designer docs](https://kirby.hananils.de/plugins/designer).
 
 ### Default fillers
 
